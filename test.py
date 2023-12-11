@@ -17,7 +17,7 @@ class Test(unittest.TestCase):
         driver.maximize_window()
         driver.implicitly_wait(15)
 
-# Siempre buscar el id del botón en el código fuente de la página. Es decir, si veos que el elementID es "login", buscar en el código fuente de la página el elemento con id="login"
+        # Siempre buscar el id del botón en el código fuente de la página. Es decir, si vemos que el elementID es "login", buscar en el código fuente de la página el elemento con id="login"
 
         # Click en el botón Sign in
         driver.find_element_by_class_name("login").click()
