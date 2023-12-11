@@ -39,10 +39,6 @@ class Test(unittest.TestCase):
         profile = webdriver.FirefoxProfile()
         profile.set_preference("browser.download.folderList", 2)
         profile.set_preference("browser.download.dir", "/path/to/downloaded/file")
-        profile.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream")
-        profile.set_preference("browser.download.manager.showWhenStarting", False)
-        profile.set_preference("browser.download.manager.focusWhenStarting", False)
-        profile.set_preference("browser.download.useDownloadDir", True)
 
         # Esperar 5 segundos para que se complete la descarga
         time.sleep(5)
