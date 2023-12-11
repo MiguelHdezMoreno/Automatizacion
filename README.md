@@ -12,16 +12,6 @@ El archivo test.py es un script de prueba que realiza las siguientes acciones:
 
 Puedes ejecutar el script test.py para probar las funcionalidades implementadas.
 
-## Contribución
-
-Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:
-
-1. Haz un fork de este repositorio.
-2. Crea una rama con el nombre descriptivo de tu contribución.
-3. Realiza los cambios necesarios.
-4. Envía un pull request para revisar tus cambios.
-
-¡Gracias por tu interés en este proyecto de automatizaciones!
 
 
 # Automations
@@ -37,14 +27,3 @@ The test.py file is a test script that performs the following actions:
 3. Executes a series of tests to verify the correct functioning of the functions.
 
 You can run the test.py script to test the implemented functionalities.
-
-## Contribution
-
-If you want to contribute to this project, please follow these steps:
-
-1. Fork this repository.
-2. Create a branch with a descriptive name for your contribution.
-3. Make the necessary changes.
-4. Send a pull request to review your changes.
-
-Thank you for your interest in this automation project!
