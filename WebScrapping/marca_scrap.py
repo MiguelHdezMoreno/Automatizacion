@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 import csv
 
+
 # Configurar el driver de Selenium
 driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
 
@@ -14,24 +15,24 @@ driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
 driver.get("https://www.marca.com/futbol/primera-division/clasificacion.html?intcmp=MENUMIGA&s_kw=clasificacion")
 
 # Esperar a que se cargue la tabla de clasificación
-WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "ue-table-ranking")))
+WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.CLASS_NAME, "ue-c-table-ranking")))
 
 # Parsear el contenido HTML de la página
 soup = BeautifulSoup(driver.page_source, "html.parser")
 
 # Obtener la tabla de clasificación
-table = soup.find('ue-table-ranking')
+table = soup.find("table", class_='ue-c-table-ranking')
 
 # Obtener las filas de la tabla de clasificación
-rows = table.find_all('ue-table-ranking-row')
+rows = table.find_all('tr', class_='ue-c-table-ranking__tr')
 
 # Crear una lista para almacenar los datos de clasificación
 clasificacion = []
 
 # Recorrer las filas y obtener los datos de equipo y puntos
 for row in rows:
-    equipo = row.find('ue-table-ranking-team').text.strip()
-    puntos = row.find('ue-table-ranking-points').text.strip()
+    equipo = row.find('span', class_='ue-c-table-ranking__team-name').text.strip()
+    puntos = row.find('td', class_='ue-c-table-ranking__td').text.strip()
     clasificacion.append((equipo, puntos))
 
 # Imprimir los datos de clasificación
@@ -46,3 +47,4 @@ with open('clasificacion.csv', 'w', newline='') as file:
 
 # Cerrar el driver
 driver.quit()
+
